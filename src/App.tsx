@@ -1,10 +1,17 @@
-import HomePage from "./pages/HomePage";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import DetailPage from './pages/DetailPage';
 
 function App() {
   return (
-    <div style={{padding: '2rem' }}>
-      <HomePage />
-    </div>
+    <BrowserRouter>
+      <div style={{ padding: '2rem' }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/pokemon/:name" element={<DetailPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
